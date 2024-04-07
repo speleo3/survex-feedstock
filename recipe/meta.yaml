@@ -1,4 +1,4 @@
-{% set version = "1.2.45" %}
+{% set version = "1.4.0" %}
 
 package:
   name: survex
@@ -17,7 +17,7 @@ requirements:
     - {{ cdt('mesa-libgl-devel') }}     # [linux]
 
   host:
-    - proj4 4.*
+    - proj >=7.2.0
 
     # for aven
     - wxwidgets
