@@ -22,7 +22,7 @@ requirements:
     # for aven
     - wxwidgets
     - ffmpeg >=6
-    - libglu
+    - libglu        # [not osx]
 
 about:
   home: https://survex.com/
