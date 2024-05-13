@@ -1,4 +1,4 @@
-{% set version = "1.4.17" %}
+{% set version = "1.4.19" %}
 
 package:
   name: survex
@@ -9,15 +9,19 @@ source:
 
 build:
   number: 0
+  ignore_run_exports:
+    - proj
+    - wxwidgets
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
+    - pkg-config
 
   host:
     - libgdal >=2.3
-    - proj >=7.2.0
+    - proj >=8.0 # https://github.com/conda-forge/proj.4-feedstock/issues/144
 
     # for aven
     - wxwidgets
@@ -25,6 +29,10 @@ requirements:
     # https://conda-forge.org/docs/maintainer/knowledge_base/#libgl
     - libgl-devel   # [linux]
     - libglu        # [not osx]
+
+  run:
+    - {{ pin_compatible('proj') }}
+    - {{ pin_compatible('wxwidgets') }}
 
 about:
   home: https://survex.com/
