@@ -1,4 +1,4 @@
-{% set version = "1.4.2" %}
+{% set version = "1.4.12" %}
 
 package:
   name: survex
@@ -17,6 +17,7 @@ requirements:
     - {{ cdt('mesa-libgl-devel') }}     # [linux]
 
   host:
+    - libgdal >=2.3
     - proj >=7.2.0
 
     # for aven
