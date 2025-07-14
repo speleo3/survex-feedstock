@@ -1,4 +1,4 @@
-{% set version = "1.4.12" %}
+{% set version = "1.4.17" %}
 
 package:
   name: survex
@@ -14,7 +14,6 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - {{ cdt('mesa-libgl-devel') }}     # [linux]
 
   host:
     - libgdal >=2.3
@@ -23,6 +22,8 @@ requirements:
     # for aven
     - wxwidgets
     - ffmpeg >=6
+    # https://conda-forge.org/docs/maintainer/knowledge_base/#libgl
+    - libgl-devel   # [linux]
     - libglu        # [not osx]
 
 about:
